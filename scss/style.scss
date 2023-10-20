@@ -1,2 +1,41 @@
-@import "_null"
+@import "_null";
+@import "_font";
 
+body{
+    font-size: 16px;
+    line-height: 22px;
+    color: #8B8FBB;
+    font-family: "Manrope", sans-serif;
+}
+.cont{
+    max-width: 1110px;
+    margin: 0 auto;
+}
+.header{
+    background-color: #F9F9FF;
+    &__cont{
+        display: flex;
+        padding-top: 16px;
+        align-items: center;
+    }
+    &__box-logo{
+        margin-right: 90px;
+    }
+    &__nav{
+        color: #424467;
+        font-family: "Montserrat", sans-serif;
+        margin-right: auto;
+    }
+    &__nav-list{
+        display: flex;
+        gap: 32px;
+    }
+    &__btn{
+        padding: 13px 24px;
+        color: #FFF;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        border-radius: 12px;
+        background: #F2B705;
+    }
+}
