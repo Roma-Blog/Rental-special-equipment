@@ -1,16 +1,48 @@
 @font-face {
-    font-family: "Roboto";
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: local("Roboto"),
-         url("/fonts/roboto.woff2") format("woff2"),
-         url("/fonts/roboto.woff") format("woff");
+    src: local("Montserrat"),
+         url("/fonts/Montserrat-Regular.woff2") format("woff2"),
+         url("/fonts/Montserrat-Regular.woff") format("woff");
 }
 @font-face {
-    font-family: "GT-Super-Display";
+    font-family: "Montserrat";
+    font-style: medium;
+    font-weight: 500;
+    src: local("Montserrat"),
+         url("/fonts/Montserrat-Medium.woff2") format("woff2"),
+         url("/fonts/Montserrat-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: semibold;
+    font-weight: 600;
+    src: local("Montserrat"),
+         url("/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+         url("/fonts/Montserrat-SemiBold.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
     font-style: bold;
-    font-weight: 900;
-    src: local("GT-Super-Display"),
-         url("/fonts/GT-Super-Display.woff2") format("woff2"),
-         url("/fonts/GT-Super-Display.woff") format("woff");
+    font-weight: 700;
+    src: local("Montserrat"),
+         url("/fonts/Montserrat-Bold.woff2") format("woff2"),
+         url("/fonts/Montserrat-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Manrope"),
+         url("/fonts/Manrope-Regular.woff2") format("woff2"),
+         url("/fonts/Manrope-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: medium;
+    font-weight: 500;
+    src: local("Manrope"),
+         url("/fonts/Manrope-Medium.woff2") format("woff2"),
+         url("/fonts/Manrope-Medium.woff") format("woff");
 }
