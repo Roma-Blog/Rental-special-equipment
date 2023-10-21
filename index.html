@@ -8,7 +8,7 @@
     <header class="header">
         <div class="header__cont cont">
             <div class="header__box-logo">
-                <img src="img/svg/sab_logo.svg" alt="Логотип">
+                <img src="img/sab_logo.svg" alt="Логотип">
             </div>
             <nav class="header__nav">
                 <ul class="header__nav-list">
@@ -50,7 +50,7 @@
             </p>
             <ul class="we-offer__list">
                 <li class="we-offer__item">
-                    <img class="we-offer__item-icon" src="img/svg/we-offer/stock-market.svg" alt="">
+                    <img class="we-offer__item-icon" src="img/we-offer/stock-market.svg" alt="">
                     <h3 class="we-offer__item-title">
                         Биржа
                     </h3>
@@ -59,7 +59,7 @@
                     </p>
                 </li>
                 <li class="we-offer__item">
-                    <img class="we-offer__item-icon" src="img/svg/we-offer/analytics.svg" alt="">
+                    <img class="we-offer__item-icon" src="img/we-offer/analytics.svg" alt="">
                     <h3 class="we-offer__item-title">
                         Аналитика
                     </h3>
@@ -68,7 +68,7 @@
                     </p>
                 </li>
                 <li class="we-offer__item">
-                    <img class="we-offer__item-icon" src="img/svg/we-offer/orders.svg" alt="">
+                    <img class="we-offer__item-icon" src="img/we-offer/orders.svg" alt="">
                     <h3 class="we-offer__item-title">
                         Заказы
                     </h3>
@@ -77,6 +77,193 @@
                     </p>
                 </li>
             </ul>
+        </div>
+    </section>
+    <section class="additional-inf">
+        <div class="additional-inf__cont cont">
+            <h2 class="additional-inf__title">
+                А так же
+            </h2>
+            <p class="additional-inf__text">
+                SABTRANS система охватывает все направления деятельности компании
+            </p>
+            <ul class="additional-inf__list">
+                <li class="additional-inf__item">
+                    <img class="additional-inf__item-icon" src="img/additional-inf/leads.svg" alt="">
+                    <h3 class="additional-inf__item-title">
+                        Лиды
+                    </h3>
+                    <p class="additional-inf__item-text">
+                        можно собирать лиды не только с сайтов, но и с мессенджеров, почтовых клиентов, социальных сетей и других источников.  И еще какой-нибудь текст.
+                    </p>
+                </li>
+                <li class="additional-inf__item">
+                    <img class="additional-inf__item-icon" src="img/additional-inf/finance.svg" alt="">
+                    <h3 class="additional-inf__item-title">
+                        Финансы
+                    </h3>
+                    <p class="additional-inf__item-text">
+                        Все плановые и фактические транзакции доступны во вкладке "Финансы". Не переключаясь между разделами, вносите новые и редактируйте уже существующие.
+                    </p>
+                </li>
+                <li class="additional-inf__item">
+                    <img class="additional-inf__item-icon" src="img/additional-inf/integration.svg" alt="">
+                    <h3 class="additional-inf__item-title">
+                        Интеграция
+                    </h3>
+                    <p class="additional-inf__item-text">
+                        Сайт, соцсети, мессенджеры, телефония, почта - со всех каналов взаимодействия заявки автоматически попадут в систему.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="order-form">
+        <div class="order-form__cont">
+            <h2 class="order-form__title">
+                Оставь заявку прямо сейчас и получи 30 дней бесплатного пользования системой
+            </h2>
+            <form class="order-form__form" action="" method="post">
+                <input class="order-form__input order-form__input--name" type="text" placeholder="Имя" name="name" id="name">
+                <input class="order-form__input order-form__input--tel" type="tel" placeholder="Телефон" name="tel" id="tel">
+                <input class="order-form__input order-form__input--submit" type="submit" value="Оставить заявку">
+            </form>
+        </div>
+    </section>
+    <section class="calculator">
+        <div class="calculator__cont cont">
+            <h2 class="calculator__title">
+                Расчет стоимости SAP системы
+            </h2>
+            <p class="calculator__text">
+                Точная стоимость зависит от количества автоматизируемых пользователей или техники, а так же других функций, которые вы хотите подключить
+            </p>
+            <div class="calculator__box">
+                <h3 class="calculator__box-title">
+                    Выберите какие функции надо подключить
+                </h3>
+                <ul class="calculator__list-parameters">
+                    <li class="calculator__item-parameters">
+                        <input class="calculator__item-checkbox" type="checkbox" name="checkbox-users" id="checkbox-users">
+                        <label class="calculator__item-label" for="checkbox-users">
+                            Пользователи / техника, кол-во
+                        </label>
+                        <input class="calculator__item-number" type="number" value="1" id="input-users">
+                            <p class="calculator__price">Стоимость, ₽:<span class="calculator__price-number">20</span></p>
+                            <p class="calculator__final-price">Итого, ₽:<span class="calculator__final-price-number">0</span></p>
+                    </li>
+                    <li class="calculator__item-parameters">
+                        <input class="calculator__item-checkbox" type="checkbox" name="checkbox-1c" id="checkbox-1c">
+                        <label class="calculator__item-label" for="checkbox-1c">
+                            Интеграция 1С, кол-во
+                        </label>
+                        <input class="calculator__item-number" type="number" value="1" id="input-1c">
+                            <p class="calculator__price">Стоимость, ₽:<span class="calculator__price-number">100</span></p>
+                            <p class="calculator__final-price">Итого, ₽:<span class="calculator__final-price-number">0</span></p>
+                    </li>
+                    <li class="calculator__item-parameters">
+                        <input class="calculator__item-checkbox" type="checkbox" name="checkbox-record" id="checkbox-record">
+                        <label class="calculator__item-label" for="checkbox-record">
+                            Хранение записей, кол-во
+                        </label>
+                        <input class="calculator__item-number" type="number" value="1" id="input-record">
+                            <p class="calculator__price">Стоимость, ₽:<span class="calculator__price-number">17</span></p>
+                            <p class="calculator__final-price">Итого, ₽:<span class="calculator__final-price-number">0</span></p>
+                    </li>
+                    <li class="calculator__item-parameters">
+                        <input class="calculator__item-checkbox" type="checkbox" name="checkbox-specialist" id="checkbox-specialist">
+                        <label class="calculator__item-label" for="checkbox-specialist">
+                            Выезд специалиста, кол-во
+                        </label>
+                        <input class="calculator__item-number" type="number" value="1" id="input-specialist">
+                            <p class="calculator__price">Стоимость, ₽:<span class="calculator__price-number">17</span></p>
+                            <p class="calculator__final-price">Итого, ₽:<span class="calculator__final-price-number">0</span></p>
+                    </li>
+                </ul>
+                <div class="calculator__total-subscription-price">
+                    <p class="calculator__total-subscription-price-text">Итого цена подписки</p>
+                    <div class="calculator__total-subscription-price-box">
+                        <span class="calculator__total-subscription-price-day"><span>0 ₽</span><span> / сутки</span></span>
+                        <span class="calculator__total-subscription-price-monthly"><span>0 ₽</span><span> / месяц</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__btn-box">
+                <button class="calculator__btn">
+                    Отправить заявку для подключения
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="partners">
+        <div class="partners__cont cont">
+            <h2 class="partners__title">Наши партнеры</h2>
+            <div class="partners__box-slider">
+                <button class="partners__btn partners__btn--previous">
+                    <img class="partners__icon-previous" src="img/partners/previous.svg">
+                    <span class="partners__btn-text">Предыдущие</span>
+                </button>
+                <ul class="partners__list">
+                    <li class="partners__item">
+                        <img class="partners__logo" src="img/partners/Alfabank.png" alt="Логотип Альфа Банка">
+                    </li>
+                    <li class="partners__item">
+                        <img class="partners__logo" src="img/partners/tochka.png" alt="Логотип Точка Банка">
+                    </li>
+                    <li class="partners__item">
+                        <img class="partners__logo" src="img/partners/sber.png" alt="Логотип Сбербанка">
+                    </li>
+                </ul>
+                <button class="partners__btn partners__btn--next">
+                    <img class="partners__icon-next" src="img/partners/next.svg">
+                    <span class="partners__btn-text">Следующие</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="advantages__cont cont">
+            <div class="advantages__box-left">
+                <h2 class="advantages__title">
+                    Почему мы?
+                </h2>
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <img class="advantages__icon" src="img/advantages/security.svg">
+                        <p class="advantages__text">
+                            Безопасное хранение данных
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <img class="advantages__icon" src="img/advantages/support.svg">
+                        <p class="advantages__text">
+                            Поддержка по телефону и в чате
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <img class="advantages__icon" src="img/advantages/integration.svg">
+                        <p class="advantages__text">
+                            Интеграция с внешними сервисами
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <img class="advantages__icon" src="img/advantages/own-exchange.svg">
+                        <p class="advantages__text">
+                            Собственная биржа
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <img class="advantages__icon" src="img/advantages/app.svg">
+                        <p class="advantages__text">
+                            Мобильное приложение
+                        </p>
+                    </li>
+                </ul>
+                <button class="advantages__btn">
+                    Заказать звонок
+                </button>
+            </div>
+            <img class="advantages__img" src="img/advantages/pic_main.svg">
         </div>
     </section>
     <script src="js/script.js"></script>
