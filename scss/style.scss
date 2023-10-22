@@ -206,7 +206,7 @@ body{
         font-size: 30px;
         font-weight: 600;
         line-height: 40px;
-        padding: 0 100px;
+        padding: 0 65px;
         margin-bottom: 52px;
     }
 
@@ -533,5 +533,159 @@ body{
     }
 
     &__img {
+    }
+}
+.faq {
+    padding: 60px 0 43px;
+    background: url(../img/faq/faq-bg.svg) no-repeat;
+    background-size: cover;
+    &__cont {
+        display: grid;
+        grid-template-columns: 635px 1fr 350px;
+    }
+
+    &__text-box {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    &__title {
+        color: #E5007E;
+        font-family: "Montserrat", sans-serif;
+        font-size: 40px;
+        line-height: 24px; 
+        margin-bottom: 24px;
+    }
+
+    &__subtitle {
+        color: #424467;
+        font-family: "Montserrat", sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 40px;
+    }
+
+    &__question-box {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    &__list {
+    }
+
+    &__item {
+        border-bottom: solid 1px #E6EBFB;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    &__question-btn {
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        text-align: left;
+    }
+
+    &__question {
+        color: #424467;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    &__question-icon {
+        padding-top: 6px;
+        padding-left: 58px;
+    }
+
+    &__answer-box {
+        overflow-y: hidden;
+        height: 0;
+    }
+    &__answer{
+        padding-top: 4px;
+    }
+}
+.contacts {
+    padding: 82px 0 32px;
+    &__cont {
+        display: grid;
+        grid-template-columns: 210px 1fr 210px 1fr 297px;
+    }
+
+    &__title {
+        grid-column: 1/-1;
+        color: #424467;
+        font-family: "Montserrat", sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 52px;
+    }
+    &__list-box{
+        display: flex;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    &__tel-box {
+        grid-column: 1/2;
+    }
+
+    &__icon {
+        margin-right: 16px;
+    }
+
+    &__list {
+    }
+
+    &__item {
+        padding: 5px 0;
+    }
+
+    &__tel {
+    }
+
+    &__email-box {
+        grid-column: 3/4;
+    }
+
+    &__email {
+    }
+
+    &__adress-box {
+        grid-column: 5/6;
+    }
+}
+.footer {
+    padding: 20px 0;
+    &__cont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__box-logo {
+    }
+
+    &__social-network-list {
+        display: flex;
+    }
+
+    &__social-network-item + &__social-network-item {
+        margin-left: 16px;
+    }
+
+    &__social-network-link {
+    }
+
+    &__social-network-icon {
+    }
+
+    &__copyright {
+        color: #C8CCED;
+        font-size: 12px;
+        line-height: 30px;
     }
 }

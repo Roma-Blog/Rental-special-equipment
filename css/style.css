@@ -311,7 +311,7 @@ body {
   font-size: 30px;
   font-weight: 600;
   line-height: 40px;
-  padding: 0 100px;
+  padding: 0 65px;
   margin-bottom: 52px;
 }
 .order-form__form {
@@ -582,4 +582,122 @@ body {
   font-weight: 500;
   line-height: 30px;
   padding: 13px 99px 13px 96px;
+}
+.faq {
+  padding: 60px 0 43px;
+  background: url(../img/faq/faq-bg.svg) no-repeat;
+  background-size: cover;
+}
+.faq__cont {
+  display: grid;
+  grid-template-columns: 635px 1fr 350px;
+}
+.faq__text-box {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.faq__title {
+  color: #E5007E;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.faq__subtitle {
+  color: #424467;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+}
+.faq__question-box {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.faq__item {
+  border-bottom: solid 1px #E6EBFB;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+.faq__question-btn {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+.faq__question {
+  color: #424467;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.faq__question-icon {
+  padding-top: 6px;
+  padding-left: 58px;
+}
+.faq__answer-box {
+  overflow-y: hidden;
+  height: 0;
+}
+.faq__answer {
+  padding-top: 4px;
+}
+
+.contacts {
+  padding: 82px 0 32px;
+}
+.contacts__cont {
+  display: grid;
+  grid-template-columns: 210px 1fr 210px 1fr 297px;
+}
+.contacts__title {
+  grid-column: 1/-1;
+  color: #424467;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 52px;
+}
+.contacts__list-box {
+  display: flex;
+  font-size: 16px;
+  line-height: 30px;
+}
+.contacts__tel-box {
+  grid-column: 1/2;
+}
+.contacts__icon {
+  margin-right: 16px;
+}
+.contacts__item {
+  padding: 5px 0;
+}
+.contacts__email-box {
+  grid-column: 3/4;
+}
+.contacts__adress-box {
+  grid-column: 5/6;
+}
+
+.footer {
+  padding: 20px 0;
+}
+.footer__cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__social-network-list {
+  display: flex;
+}
+.footer__social-network-item + .footer__social-network-item {
+  margin-left: 16px;
+}
+.footer__copyright {
+  color: #C8CCED;
+  font-size: 12px;
+  line-height: 30px;
 }
