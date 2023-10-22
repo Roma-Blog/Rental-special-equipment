@@ -122,6 +122,22 @@ body {
   margin: 0 auto;
 }
 
+.title-h2 {
+  color: #424467;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.btn-style {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  border-radius: 12px;
+  background: #F2B705;
+  font-size: 18px;
+}
+
 .header {
   background-color: #F9F9FF;
 }
@@ -144,11 +160,7 @@ body {
 }
 .header__btn {
   padding: 13px 24px;
-  color: #FFF;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  border-radius: 12px;
-  background: #F2B705;
+  font-size: 16px;
 }
 
 .first-screen {
@@ -177,12 +189,7 @@ body {
   margin-bottom: 54px;
 }
 .first-screen__btn {
-  border-radius: 12px;
   background: #616BE8;
-  color: #FFF;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
   line-height: normal;
   padding: 17px 97px;
 }
@@ -200,10 +207,6 @@ body {
 .we-offer__title {
   grid-column: 1/2;
   grid-row: 1/2;
-  color: #424467;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
   line-height: normal;
   padding-right: 30px;
   margin-bottom: 40px;
@@ -254,10 +257,6 @@ body {
 }
 .additional-inf__title {
   grid-column: 1/2;
-  color: #424467;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
   line-height: normal;
 }
 .additional-inf__text {
@@ -300,16 +299,10 @@ body {
   background-color: #616BE8;
   padding: 60px 0;
 }
-.order-form__cont {
-  margin: 0 auto;
-  max-width: 1100px;
-}
 .order-form__title {
   color: #FFF;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  font-weight: 600;
   line-height: 40px;
   padding: 0 65px;
   margin-bottom: 52px;
@@ -353,11 +346,7 @@ body {
   padding: 82px 0;
 }
 .calculator__title {
-  color: #424467;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
   line-height: 73px;
 }
 .calculator__text {
@@ -502,13 +491,7 @@ body {
   justify-content: center;
 }
 .calculator__btn {
-  color: #FFF;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
   line-height: 30px;
-  border-radius: 12px;
-  background: #F2B705;
   padding: 13px 90px;
 }
 
@@ -519,9 +502,6 @@ body {
 .partners__title {
   color: #FFF;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
   line-height: normal;
   margin-bottom: 40px;
 }
@@ -559,10 +539,6 @@ body {
   grid-template-columns: 1fr 654px;
 }
 .advantages__title {
-  color: #424467;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
   line-height: normal;
   margin-bottom: 52px;
 }
@@ -574,12 +550,6 @@ body {
 }
 .advantages__btn {
   margin-top: 32px;
-  border-radius: 12px;
-  background: #F2B705;
-  color: #FFF;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
   line-height: 30px;
   padding: 13px 99px 13px 96px;
 }
