@@ -52,6 +52,9 @@ button::-moz-focus-inner {
 
 a, a:visited {
   text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 a:hover {
@@ -74,39 +77,33 @@ h1, h2, h3, h4, h5, h6 {
 /*-------------------------------------------------------------------------------------*/
 @font-face {
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: 400;
-  src: local("Montserrat"), url("/fonts/Montserrat-Regular.woff2") format("woff2"), url("/fonts/Montserrat-Regular.woff") format("woff");
+  src: local("Montserrat"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
-  font-style: medium;
   font-weight: 500;
-  src: local("Montserrat"), url("/fonts/Montserrat-Medium.woff2") format("woff2"), url("/fonts/Montserrat-Medium.woff") format("woff");
+  src: local("Montserrat"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
-  font-style: semibold;
   font-weight: 600;
-  src: local("Montserrat"), url("/fonts/Montserrat-SemiBold.woff2") format("woff2"), url("/fonts/Montserrat-SemiBold.woff") format("woff");
+  src: local("Montserrat"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
-  font-style: bold;
   font-weight: 700;
-  src: local("Montserrat"), url("/fonts/Montserrat-Bold.woff2") format("woff2"), url("/fonts/Montserrat-Bold.woff") format("woff");
+  src: local("Montserrat"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "Manrope";
-  font-style: normal;
   font-weight: 400;
-  src: local("Manrope"), url("/fonts/Manrope-Regular.woff2") format("woff2"), url("/fonts/Manrope-Regular.woff") format("woff");
+  src: local("Manrope"), url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Manrope";
-  font-style: medium;
   font-weight: 500;
-  src: local("Manrope"), url("/fonts/Manrope-Medium.woff2") format("woff2"), url("/fonts/Manrope-Medium.woff") format("woff");
+  src: local("Manrope"), url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
 }
 body {
   box-sizing: border-box;
@@ -332,11 +329,6 @@ body {
 }
 .order-form__input--submit {
   grid-column: 3/4;
-  background-color: #F2B705;
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 18px;
-  font-weight: 500;
 }
 .order-form__input--submit:hover {
   cursor: pointer;
