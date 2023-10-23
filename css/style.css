@@ -303,7 +303,6 @@ body {
 .order-form__title {
   color: #FFF;
   text-align: center;
-  font-size: 30px;
   line-height: 40px;
   padding: 0 65px;
   margin-bottom: 52px;
@@ -548,7 +547,17 @@ body {
   margin-top: 32px;
   line-height: 30px;
   padding: 13px 99px 13px 96px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: start;
 }
+.advantages__img {
+  height: 520px;
+  background: url(../img/advantages/pic_main.svg) no-repeat right;
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
 .faq {
   padding: 60px 0 43px;
   background: url(../img/faq/faq-bg.svg) no-repeat;
@@ -740,6 +749,13 @@ body {
   .additional-inf__item-title {
     margin-bottom: 16px;
   }
+  .advantages__cont {
+    grid-template-columns: 1fr 436px;
+  }
+  .advantages__img {
+    height: 520px;
+    background: url(../img/advantages/pic_m-max-1024.svg) no-repeat right;
+  }
 }
 @media (max-width: 880px) {
   .we-offer {
@@ -773,13 +789,75 @@ body {
   .additional-inf__item-title {
     margin-bottom: 0;
   }
+  .order-form__title {
+    padding: 0;
+  }
+  .order-form__form {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .order-form__input--submit {
+    grid-column: 1/-1;
+  }
+  .calculator__title {
+    line-height: 44px;
+  }
+  .calculator__text {
+    padding: 8px;
+  }
+  .calculator__item-parameters {
+    grid-template-columns: 1fr 1fr 160px;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .calculator__item-label {
+    grid-column: 1/3;
+  }
+  .calculator__item-number {
+    grid-column: 3/4;
+  }
+  .calculator__price {
+    grid-column: 1/2;
+  }
+  .calculator__final-price {
+    grid-column: 2/3;
+  }
+  .calculator__total-subscription-price {
+    padding: 4px 16px;
+  }
+  .calculator__total-subscription-price-text {
+    font-size: 20px;
+  }
+  .advantages__cont {
+    grid-template-columns: 1fr 1fr;
+  }
+  .advantages__btn {
+    grid-column: 1/3;
+    justify-self: center;
+  }
+  .advantages__img {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-size: contain;
+  }
+}
+@media (max-width: 720px) {
+  .calculator__total-subscription-price-box {
+    display: block;
+  }
+  .calculator__total-subscription-price-monthly {
+    padding: 7px 24px;
+  }
 }
 @media (max-width: 580px) {
+  .title-h2 {
+    font-size: 36px;
+  }
   .first-screen__cont {
     padding: 52px 0 55vw;
   }
   .first-screen__title {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 46px;
   }
   .first-screen__btn {
@@ -790,7 +868,6 @@ body {
   }
   .we-offer__title {
     margin-bottom: 32px;
-    font-size: 36px;
   }
   .we-offer__text {
     margin-bottom: 40px;
@@ -822,6 +899,53 @@ body {
   }
   .additional-inf__item-title {
     margin-bottom: 16px;
+  }
+  .order-form__form {
+    grid-template-columns: 1fr;
+  }
+  .order-form__input {
+    grid-column: 1/-1;
+  }
+  .calculator {
+    padding: 72px 0;
+  }
+  .calculator__cont {
+    padding: 0 8px;
+  }
+  .calculator__box {
+    padding: 24px 16px 16px;
+  }
+  .calculator__box-title {
+    text-align: center;
+  }
+  .calculator__item-parameters {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+  }
+  .calculator__item-label {
+    grid-column: 1/-1;
+    font-size: 16px;
+  }
+  .calculator__item-number {
+    grid-column: 1/-1;
+  }
+  .calculator__price {
+    grid-column: 1/2;
+    font-size: 12px;
+  }
+  .calculator__final-price {
+    grid-column: 2/3;
+    font-size: 12px;
+  }
+  .calculator__total-subscription-price {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+  .calculator__total-subscription-price-text {
+    margin-bottom: 24px;
+  }
+  .calculator__btn {
+    padding: 14px 28px;
   }
 }
 @media (max-width: 512px) {

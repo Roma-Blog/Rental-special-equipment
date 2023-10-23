@@ -201,7 +201,6 @@ body{
     &__title {
         color: #FFF;
         text-align: center;
-        font-size: 30px;
         line-height: 40px;
         padding: 0 65px;
         margin-bottom: 52px;
@@ -499,9 +498,16 @@ body{
         margin-top: 32px;
         line-height: 30px;
         padding: 13px 99px 13px 96px;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-self: start;
     }
 
     &__img {
+        height: 520px;
+        background: url(../img/advantages/pic_main.svg) no-repeat right;
+        grid-column: 2/3;
+        grid-row: 1/3;
     }
 }
 .faq {
@@ -736,6 +742,15 @@ body{
             margin-bottom: 16px;
         }
     }
+    .advantages{
+        &__cont{
+            grid-template-columns: 1fr 436px;
+        }
+        &__img {
+            height: 520px;
+            background: url(../img/advantages/pic_m-max-1024.svg) no-repeat right;
+        }
+    }
 }
 @media (max-width: 880px){
     .we-offer{
@@ -769,14 +784,87 @@ body{
             margin-bottom: 0;
         }
     }
+    .order-form{
+        &__title{
+            padding: 0;
+        }
+        &__form{
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        &__input{
+            &--submit{
+                grid-column: 1/-1;
+            }
+        }
+    }
+    .calculator{
+        &__title{
+            line-height: 44px;
+        }
+        &__text{
+            padding: 8px;
+        }
+        &__item-parameters{
+            grid-template-columns: 1fr 1fr 160px;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        &__item-label{
+            grid-column: 1/3;
+        }
+        &__item-number{
+            grid-column: 3/4;
+        }
+        &__price{
+            grid-column: 1/2;
+        }
+        &__final-price{
+            grid-column: 2/3;
+        }
+        &__total-subscription-price{
+            padding: 4px 16px;
+        }
+        &__total-subscription-price-text{
+            font-size: 20px;
+        }
+    }
+    .advantages{
+        &__cont{
+            grid-template-columns: 1fr 1fr;
+        }
+        &__btn {
+            grid-column: 1/3;
+            justify-self: center;
+        }
+    
+        &__img {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-size: contain;
+        }
+    }
+}
+@media (max-width: 720px){
+    .calculator{
+        &__total-subscription-price-box{
+            display: block;
+        }
+        &__total-subscription-price-monthly{
+            padding: 7px 24px;
+        }
+    }
 }
 @media (max-width: 580px) {
+    .title-h2{
+        font-size: 36px;
+    }
     .first-screen{
         &__cont{
             padding:52px 0 55vw;
         }
         &__title{
-            font-size: 36px;
+            font-size: 40px;
             line-height: 46px;
         }
         &__btn{
@@ -788,7 +876,6 @@ body{
         padding: 72px 0;
         &__title{
             margin-bottom: 32px;
-            font-size: 36px;
         }
         &__text{
             margin-bottom: 40px;
@@ -820,6 +907,58 @@ body{
         }
         &__item-title{
             margin-bottom: 16px;
+        }
+    }
+    .order-form{
+        &__title{
+            
+        }
+        &__form{
+            grid-template-columns: 1fr;
+        }
+        &__input{
+            grid-column: 1/-1;
+        }
+    }
+    .calculator{
+        padding: 72px 0;
+        &__cont{
+            padding: 0 8px;
+        }
+        &__box{
+            padding: 24px 16px 16px;
+        }
+        &__box-title{
+            text-align: center;
+        }
+        &__item-parameters{
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 20px;
+        }
+        &__item-label{
+            grid-column: 1/-1;
+            font-size: 16px;
+        }
+        &__item-number{
+            grid-column: 1/-1;
+        }
+        &__price{
+            grid-column: 1/2;
+            font-size: 12px;
+        }
+        &__final-price{
+            grid-column: 2/3;
+            font-size: 12px;
+        }
+        &__total-subscription-price{
+            flex-direction: column;
+            padding: 16px 20px;
+        }
+        &__total-subscription-price-text{
+            margin-bottom: 24px;
+        }
+        &__btn{
+            padding: 14px 28px;
         }
     }
 }
