@@ -595,13 +595,17 @@ body {
   font-weight: 500;
   line-height: 24px;
 }
-.faq__question-icon {
+.faq__question-icon-box {
   padding-top: 6px;
   padding-left: 58px;
+}
+.faq__question-icon {
+  transition: all 0.5s;
 }
 .faq__answer-box {
   overflow-y: hidden;
   height: 0;
+  transition: all 0.5s;
 }
 .faq__answer {
   padding-top: 4px;

@@ -560,14 +560,18 @@ body{
         line-height: 24px;
     }
 
-    &__question-icon {
+    &__question-icon-box {
         padding-top: 6px;
         padding-left: 58px;
+    }
+    &__question-icon {
+        transition: all 0.5s;
     }
 
     &__answer-box {
         overflow-y: hidden;
         height: 0;
+        transition: all 0.5s;
     }
     &__answer{
         padding-top: 4px;
