@@ -420,7 +420,7 @@ body{
         line-height: normal;
         margin-bottom: 40px;
     }
-    &__box-slider{
+    /*&__box-slider{
         display: flex;
         justify-content: space-between;
     }
@@ -430,7 +430,7 @@ body{
         justify-content: space-between;
         align-items: center;
         gap: 140px;
-    }
+    }*/
 
     &__item {
     }
@@ -462,6 +462,10 @@ body{
     }
     &__icon-previous {
     }
+}
+.slick-track {
+    display: flex;
+    align-items: center;
 }
 .advantages {
     padding: 82px 0 84px;
@@ -672,6 +676,11 @@ body{
     .first-screen{
         background-size:contain;
     }
+    .faq{
+        &__cont{
+            grid-template-columns: 635px 1fr 256px;
+        }
+    }
 }
 @media (max-width: 1024px) {
     .header{
@@ -749,6 +758,20 @@ body{
         &__img {
             height: 520px;
             background: url(../img/advantages/pic_m-max-1024.svg) no-repeat right;
+        }
+    }
+    .faq{
+        &__cont{
+            display: block;
+        }
+        &__text-box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        &__title{
+            margin: 0 16px 0 0;
         }
     }
 }
@@ -844,6 +867,32 @@ body{
             background-size: contain;
         }
     }
+    .faq{
+        &__cont{
+
+        }
+    }
+    .contacts{
+        &__cont{
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        &__title{
+            margin-bottom: 36px;
+        }
+        &__tel-box{
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        &__email-box{
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        &__adress-box{
+            grid-column: 1/-1;
+            grid-row: 3/4;
+        }
+    }
 }
 @media (max-width: 720px){
     .calculator{
@@ -852,6 +901,20 @@ body{
         }
         &__total-subscription-price-monthly{
             padding: 7px 24px;
+        }
+    }
+    .faq{
+        &__cont{
+            display: block;
+        }
+        &__text-box{
+            display: block;
+        }
+        &__title{
+            margin: 0 0 16px 0;
+        }
+        &__subtitle{
+            margin-bottom: 40px;
         }
     }
 }
@@ -959,6 +1022,39 @@ body{
         }
         &__btn{
             padding: 14px 28px;
+        }
+    }
+    .contacts{
+        padding: 72px 0 45px;
+        &__cont{
+            display: block;
+        }
+        &__title{
+            margin-bottom: 40px;
+        }
+        &__list-box{
+            margin-bottom: 30px;
+        }
+        &__tel-box{
+            
+        }
+        &__email-box{
+            
+        }
+        &__adress-box{
+            
+        }
+    }
+    .footer{
+        &__cont{
+            flex-direction: column;
+        }
+        &__social-network-list{
+            order: -1;
+            margin-bottom: 24px;
+        }
+        &__box-logo{
+            margin-bottom: 4px;
         }
     }
 }

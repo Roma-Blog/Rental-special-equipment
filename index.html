@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <header class="header">
@@ -199,32 +200,41 @@
             </div>
         </div>
     </section>
-    <!--<section class="partners">
+    <section class="partners">
         <div class="partners__cont cont">
             <h2 class="partners__title title-h2">Наши партнеры</h2>
             <div class="partners__box-slider">
-                <button class="partners__btn partners__btn--previous">
+                <button type="button" class="partners__btn partners__btn--previous slick-prev">
                     <img class="partners__icon-previous" src="img/partners/previous.svg">
                     <span class="partners__btn-text">Предыдущие</span>
                 </button>
-                <ul class="partners__list">
-                    <li class="partners__item">
+                <div class="partners__list">
+                    <div class="partners__item">
                         <img class="partners__logo" src="img/partners/Alfabank.png" alt="Логотип Альфа Банка">
-                    </li>
-                    <li class="partners__item">
+                    </div>
+                    <div class="partners__item">
                         <img class="partners__logo" src="img/partners/tochka.png" alt="Логотип Точка Банка">
-                    </li>
-                    <li class="partners__item">
+                    </div>
+                    <div class="partners__item">
                         <img class="partners__logo" src="img/partners/sber.png" alt="Логотип Сбербанка">
-                    </li>
-                </ul>
-                <button class="partners__btn partners__btn--next">
+                    </div>
+                    <div class="partners__item">
+                        <img class="partners__logo" src="img/partners/Alfabank.png" alt="Логотип Альфа Банка">
+                    </div>
+                    <div class="partners__item">
+                        <img class="partners__logo" src="img/partners/tochka.png" alt="Логотип Точка Банка">
+                    </div>
+                    <div class="partners__item">
+                        <img class="partners__logo" src="img/partners/sber.png" alt="Логотип Сбербанка">
+                    </div>
+                </div>
+                <button type="button" class="partners__btn partners__btn--next slick-next">
                     <img class="partners__icon-next" src="img/partners/next.svg">
                     <span class="partners__btn-text">Следующие</span>
                 </button>
             </div>
         </div>
-    </section>-->
+    </section>
     <section class="advantages">
         <div class="advantages__cont cont">
             <div class="advantages__box-left">
@@ -270,7 +280,7 @@
             <div class="advantages__img"></div>
         </div>
     </section>
-    <!--<section class="faq">
+    <section class="faq">
         <div class="faq__cont cont">
             <div class="faq__text-box">
                 <h2 class="faq__title">
@@ -425,9 +435,10 @@
                 © 2023 SABTRANS
             </p>
         </div>
-    </footer>-->
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/maska-nomera.js" type="text/javascript" ></script>
     <script src="js/script.js"></script>
     <script>

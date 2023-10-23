@@ -493,22 +493,23 @@ body {
 .partners {
   background-color: #F2B705;
   padding: 50px 0;
+  /*&__box-slider{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 140px;
+  }*/
 }
 .partners__title {
   color: #FFF;
   text-align: center;
   line-height: normal;
   margin-bottom: 40px;
-}
-.partners__box-slider {
-  display: flex;
-  justify-content: space-between;
-}
-.partners__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 140px;
 }
 .partners__btn {
   background-color: transparent;
@@ -526,6 +527,11 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
 .advantages {
   padding: 82px 0 84px;
 }
@@ -685,6 +691,9 @@ body {
   .first-screen {
     background-size: contain;
   }
+  .faq__cont {
+    grid-template-columns: 635px 1fr 256px;
+  }
 }
 @media (max-width: 1024px) {
   .header__box-logo {
@@ -755,6 +764,18 @@ body {
   .advantages__img {
     height: 520px;
     background: url(../img/advantages/pic_m-max-1024.svg) no-repeat right;
+  }
+  .faq__cont {
+    display: block;
+  }
+  .faq__text-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .faq__title {
+    margin: 0 16px 0 0;
   }
 }
 @media (max-width: 880px) {
@@ -840,6 +861,25 @@ body {
     grid-row: 1/2;
     background-size: contain;
   }
+  .contacts__cont {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .contacts__title {
+    margin-bottom: 36px;
+  }
+  .contacts__tel-box {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .contacts__email-box {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .contacts__adress-box {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
 }
 @media (max-width: 720px) {
   .calculator__total-subscription-price-box {
@@ -847,6 +887,18 @@ body {
   }
   .calculator__total-subscription-price-monthly {
     padding: 7px 24px;
+  }
+  .faq__cont {
+    display: block;
+  }
+  .faq__text-box {
+    display: block;
+  }
+  .faq__title {
+    margin: 0 0 16px 0;
+  }
+  .faq__subtitle {
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 580px) {
@@ -946,6 +998,28 @@ body {
   }
   .calculator__btn {
     padding: 14px 28px;
+  }
+  .contacts {
+    padding: 72px 0 45px;
+  }
+  .contacts__cont {
+    display: block;
+  }
+  .contacts__title {
+    margin-bottom: 40px;
+  }
+  .contacts__list-box {
+    margin-bottom: 30px;
+  }
+  .footer__cont {
+    flex-direction: column;
+  }
+  .footer__social-network-list {
+    order: -1;
+    margin-bottom: 24px;
+  }
+  .footer__box-logo {
+    margin-bottom: 4px;
   }
 }
 @media (max-width: 512px) {
