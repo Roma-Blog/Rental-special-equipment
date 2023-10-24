@@ -294,6 +294,7 @@ body{
     }
     
     &__item-label {
+        user-select: none;
         position: relative;
         grid-column: 1/2;
         color: #424467;
@@ -315,6 +316,12 @@ body{
     &__item-checkbox:checked + &__item-label::before{
         background-image: url(../img/calculator/ic_g.svg);
         background-position: -1px -1px;
+    }
+    &__item-checkbox ~ *:not(&__item-label){
+        display: none;
+    }
+    &__item-checkbox:checked  ~ *:not(&__item-label){
+        display: block;
     }
 
     &__item-number {
@@ -420,17 +427,14 @@ body{
         line-height: normal;
         margin-bottom: 40px;
     }
-    /*&__box-slider{
+    &__box-slider{
         display: flex;
         justify-content: space-between;
     }
 
     &__list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 140px;
-    }*/
+        
+    }
 
     &__item {
     }
@@ -440,10 +444,10 @@ body{
     &__btn {
         background-color: transparent;
         &--previous{
-
+            padding-right: 16px;
         }
         &--next {
-
+            padding-left: 16px;
         }
     }
     &__btn-text {
@@ -463,10 +467,19 @@ body{
     &__icon-previous {
     }
 }
+.slick-slider{
+    min-width: 0;
+    max-width: 972px;
+}
 .slick-track {
     display: flex;
     align-items: center;
 }
+.slick-track .slick-slide{
+    display: flex;
+    justify-content: center;
+}
+
 .advantages {
     padding: 82px 0 84px;
     &__cont {
@@ -1022,6 +1035,30 @@ body{
         }
         &__btn{
             padding: 14px 28px;
+        }
+    }
+    .partners{
+        &__logo{
+            max-width: 196px;
+        }
+    }
+    .advantages{
+        padding: 72px 0 51px;
+        &__cont{
+            display: block;
+        }
+        &__title{
+            margin-bottom: 40px;
+        }
+        &__img{
+            background-image: url(../img/advantages/pic_m-max-580.svg);
+            background-position: center;
+            height: 370px;
+        }
+        &__btn{
+            display: block;
+            padding: 13px 66px;
+            margin: 32px auto 52px;
         }
     }
     .contacts{

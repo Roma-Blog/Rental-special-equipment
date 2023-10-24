@@ -387,6 +387,9 @@ body {
   overflow: hidden;
 }
 .calculator__item-label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   position: relative;
   grid-column: 1/2;
   color: #424467;
@@ -408,6 +411,12 @@ body {
 .calculator__item-checkbox:checked + .calculator__item-label::before {
   background-image: url(../img/calculator/ic_g.svg);
   background-position: -1px -1px;
+}
+.calculator__item-checkbox ~ *:not(.calculator__item-label) {
+  display: none;
+}
+.calculator__item-checkbox:checked ~ *:not(.calculator__item-label) {
+  display: block;
 }
 .calculator__item-number {
   grid-column: 2/3;
@@ -493,17 +502,6 @@ body {
 .partners {
   background-color: #F2B705;
   padding: 50px 0;
-  /*&__box-slider{
-      display: flex;
-      justify-content: space-between;
-  }
-
-  &__list {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 140px;
-  }*/
 }
 .partners__title {
   color: #FFF;
@@ -511,8 +509,18 @@ body {
   line-height: normal;
   margin-bottom: 40px;
 }
+.partners__box-slider {
+  display: flex;
+  justify-content: space-between;
+}
 .partners__btn {
   background-color: transparent;
+}
+.partners__btn--previous {
+  padding-right: 16px;
+}
+.partners__btn--next {
+  padding-left: 16px;
 }
 .partners__btn-text {
   position: absolute;
@@ -527,9 +535,19 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.slick-slider {
+  min-width: 0;
+  max-width: 972px;
+}
+
 .slick-track {
   display: flex;
   align-items: center;
+}
+
+.slick-track .slick-slide {
+  display: flex;
+  justify-content: center;
 }
 
 .advantages {
@@ -998,6 +1016,28 @@ body {
   }
   .calculator__btn {
     padding: 14px 28px;
+  }
+  .partners__logo {
+    max-width: 196px;
+  }
+  .advantages {
+    padding: 72px 0 51px;
+  }
+  .advantages__cont {
+    display: block;
+  }
+  .advantages__title {
+    margin-bottom: 40px;
+  }
+  .advantages__img {
+    background-image: url(../img/advantages/pic_m-max-580.svg);
+    background-position: center;
+    height: 370px;
+  }
+  .advantages__btn {
+    display: block;
+    padding: 13px 66px;
+    margin: 32px auto 52px;
   }
   .contacts {
     padding: 72px 0 45px;
