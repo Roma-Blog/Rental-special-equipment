@@ -1,3 +1,4 @@
+//FAQ________________________________
 $('.faq__item').each(function(){
     let heightEl = $(this).find('.faq__question-btn + .faq__answer-box .faq__answer').css('height')
     const answerBox = $(this).find('.faq__question-btn + .faq__answer-box')
@@ -16,6 +17,8 @@ $('.faq__item').each(function(){
         }
     })
 })
+
+//Slider________________________________
 $('.partners__list').slick({
     infinite: true,
     slidesToShow: 3,
@@ -41,4 +44,25 @@ $('.partners__btn--next').on('click', function(){
 })
 $('.partners__btn--previous').on('click', function(){
     $('.partners__list').slick('slickPrev')
+})
+
+//Pop-up________________________________
+const popUp = $('.pop-up')
+const body = $('body')
+
+$('.btn-open-pop-up').each(function(){
+  $(this).on('click', function(){
+    popUp.addClass('pop-up__open')
+    body.addClass('scroll-none')
+    if ($(this).data('title')){
+      $('.pop-up__title').html($(this).data('title'))
+    }
+    else {
+      $('.pop-up__title').html($('.pop-up__title').data('title'))
+    }
+  })
+})
+$('.pop-up__exit').on('click', function(){
+  popUp.removeClass('pop-up__open')
+  body.removeClass('scroll-none')
 })
