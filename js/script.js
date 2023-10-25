@@ -66,3 +66,54 @@ $('.pop-up__exit').on('click', function(){
   popUp.removeClass('pop-up__open')
   body.removeClass('scroll-none')
 })
+
+//calculator________________________________
+const priceDay = $('.calculator__total-subscription-price-day span:first-child')
+const priceMonthly= $('.calculator__total-subscription-price-monthly span:first-child')
+
+$('.calculator__item-parameters').each(function(){
+  let inputNum = $(this).find('.calculator__item-number')
+  let checkbox = $(this).find('.calculator__item-checkbox')
+  let finishPrice = $(this).find('.calculator__final-price .calculator__final-price-number')
+
+  Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+  FinishCalculate()
+  inputNum.on('focusout', function(){
+    if(inputNum.val() == ''){
+      inputNum.val('1')
+    }
+  })
+  inputNum.on('change', function(){
+    if(inputNum.val() > 99){
+      inputNum.val('99')
+    }
+    else if ($(this).val() < 1){
+      inputNum.val('1')
+    }
+    Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+    FinishCalculate()
+  })
+  checkbox.on('change', function(){
+    Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+    FinishCalculate()
+  })
+})
+
+function Calculate( num, checked , el){
+  if (checked){
+    el.html(el.data('price')*num).data('finishprice', el.data('price')*num)
+  }
+  else{
+    el.html(0).data('finishprice', 0)
+  }
+}
+
+function FinishCalculate(){
+  let priceDaySum = 0
+  $('.calculator__final-price-number').each(function(){
+    priceDaySum += $(this).data('finishprice')
+  })
+  
+  priceDay.html(priceDaySum + ' ₽')
+  priceMonthly.html((priceDaySum * 30) + ' ₽')
+}
