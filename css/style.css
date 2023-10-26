@@ -105,6 +105,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   src: local("Manrope"), url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   font-size: 16px;
@@ -801,6 +805,9 @@ body {
 .pop-up__input--submit {
   padding: 17px 125px;
   border: none;
+}
+.pop-up__input--submit:hover {
+  cursor: pointer;
 }
 .pop-up__input::-moz-placeholder {
   color: #8B8FBB;

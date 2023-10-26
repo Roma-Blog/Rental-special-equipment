@@ -1,6 +1,9 @@
 @import "_null";
 @import "_font";
 
+html{
+    scroll-behavior:smooth;
+}
 body{
     box-sizing: border-box;
     font-size: 16px;
@@ -785,6 +788,9 @@ body{
         &--submit {
             padding: 17px 125px;
             border: none;
+            &:hover{
+                cursor: pointer;
+            }
         }
         &::placeholder{
             color: #8B8FBB;
