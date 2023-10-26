@@ -54,10 +54,35 @@ body{
         padding: 13px 24px;
         font-size: 16px;
     }
-    &__btn-burger{
+    &__btn-burger-box{
         display: none;
     }
+    &__mob-nav{
+        position: absolute;
+        top: -32px;
+        right: -16px;
+        text-align: right;
+        overflow: hidden;
+        background-color: #F9F9FF;
+        padding: 0;
+        height: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 10px #424467;
+    }
+    &__mob-nav-open{
+        height: 120vh;
+        padding: 96px 16px 0 128px;
+    }
+    &__mob-nav-list{
+        color: #424467;
+        font-family: "Montserrat", sans-serif;
+        margin-right: auto;
+    }
+    &__mob-nav-item{
+        margin-bottom: 16px;
+    }
 }
+
 .first-screen{
     background:#F9F9FF url(../img/pic_fon-first-screen.svg) no-repeat center bottom;
     &__cont{
@@ -782,13 +807,17 @@ body{
         &__nav{
             display: none;
         }
-        &__btn-burger{
+        &__btn-burger-box{
             display: block;
+            position: relative;
+        }
+        &__btn-burger{
             height: 20px;
             width: 25px;
             background-color: transparent;
             margin-left: 40px;
             position: relative;
+            z-index: 10;
         }
         &__btn-burger-line{
             height: 5px;
