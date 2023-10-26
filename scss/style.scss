@@ -30,6 +30,8 @@ body{
     border-radius: 12px;
     background: #F2B705;
     font-size: 18px;
+    border: 2px solid #F2B705;
+    transition: color 0.5s, background-color 0.5s;
 }
 .header{
     background-color: #F9F9FF;
@@ -51,7 +53,7 @@ body{
         gap: 32px;
     }
     &__btn{
-        padding: 13px 24px;
+        padding: 11px 22px;
         font-size: 16px;
     }
     &__btn-burger-box{
@@ -64,19 +66,20 @@ body{
         text-align: right;
         overflow: hidden;
         background-color: #F9F9FF;
-        padding: 0;
-        height: 0;
+        padding: 96px 0 0 0;
+        width: 0;
+        height: 120vh;
         transition: all 0.5s;
         box-shadow: 0 0 10px #424467;
     }
     &__mob-nav-open{
-        height: 120vh;
-        padding: 96px 16px 0 128px;
+        width: 256px;
     }
     &__mob-nav-list{
         color: #424467;
         font-family: "Montserrat", sans-serif;
         margin-right: auto;
+        padding: 0 16px;
     }
     &__mob-nav-item{
         margin-bottom: 16px;
@@ -110,7 +113,8 @@ body{
     &__btn{
         background: #616BE8;
         line-height: normal;
-        padding: 17px 97px;
+        padding: 15px 95px;
+        border-color: #616BE8;
     }
 }
 .we-offer{
@@ -439,7 +443,7 @@ body{
     }
     &__btn{
         line-height: 30px;
-        padding: 13px 90px;
+        padding: 11px 88px;
 
     }
 }
@@ -541,7 +545,7 @@ body{
     &__btn {
         margin-top: 32px;
         line-height: 30px;
-        padding: 13px 99px 13px 96px;
+        padding: 11px 97px 11px 94px;
         grid-column: 1/2;
         grid-row: 2/3;
         justify-self: start;
@@ -819,11 +823,13 @@ body{
             position: relative;
             z-index: 10;
         }
+        
         &__btn-burger-line{
             height: 5px;
             width: 100%;
             background-color: #616BE8;
             border-radius: 10px;
+            transition: all 0.5s;
             &::after, &::before{
                 content: '';
                 position: absolute;
@@ -832,6 +838,7 @@ body{
                 background-color: #616BE8;
                 border-radius: 10px;
                 left: 0;
+                transition: all 0.5s;
             }
             &::before{
                 content: '';
@@ -840,6 +847,19 @@ body{
             &::after{
                 content: '';
                 bottom: 0;
+            }
+        }
+        &__btn-burger-exit &__btn-burger-line{
+            background-color: transparent;
+            &::before{
+                content: '';
+                rotate: 45deg;
+                top: 45%;
+            }
+            &::after{
+                content: '';
+                rotate: -45deg;
+                top: 45%;
             }
         }
     }
@@ -1052,7 +1072,7 @@ body{
             line-height: 46px;
         }
         &__btn{
-            padding: 17px 66px;
+            padding: 15px 64px;
         }
         
     }
@@ -1142,7 +1162,7 @@ body{
             margin-bottom: 24px;
         }
         &__btn{
-            padding: 14px 28px;
+            padding: 12px 26px;
         }
     }
     .partners{
@@ -1165,7 +1185,7 @@ body{
         }
         &__btn{
             display: block;
-            padding: 13px 66px;
+            padding: 11px 64px;
             margin: 32px auto 52px;
         }
     }

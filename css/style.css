@@ -138,6 +138,8 @@ body {
   border-radius: 12px;
   background: #F2B705;
   font-size: 18px;
+  border: 2px solid #F2B705;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 .header {
@@ -161,7 +163,7 @@ body {
   gap: 32px;
 }
 .header__btn {
-  padding: 13px 24px;
+  padding: 11px 22px;
   font-size: 16px;
 }
 .header__btn-burger-box {
@@ -174,19 +176,20 @@ body {
   text-align: right;
   overflow: hidden;
   background-color: #F9F9FF;
-  padding: 0;
-  height: 0;
+  padding: 96px 0 0 0;
+  width: 0;
+  height: 120vh;
   transition: all 0.5s;
   box-shadow: 0 0 10px #424467;
 }
 .header__mob-nav-open {
-  height: 120vh;
-  padding: 96px 16px 0 128px;
+  width: 256px;
 }
 .header__mob-nav-list {
   color: #424467;
   font-family: "Montserrat", sans-serif;
   margin-right: auto;
+  padding: 0 16px;
 }
 .header__mob-nav-item {
   margin-bottom: 16px;
@@ -220,7 +223,8 @@ body {
 .first-screen__btn {
   background: #616BE8;
   line-height: normal;
-  padding: 17px 97px;
+  padding: 15px 95px;
+  border-color: #616BE8;
 }
 
 .we-offer {
@@ -524,7 +528,7 @@ body {
 }
 .calculator__btn {
   line-height: 30px;
-  padding: 13px 90px;
+  padding: 11px 88px;
 }
 
 .partners {
@@ -597,7 +601,7 @@ body {
 .advantages__btn {
   margin-top: 32px;
   line-height: 30px;
-  padding: 13px 99px 13px 96px;
+  padding: 11px 97px 11px 94px;
   grid-column: 1/2;
   grid-row: 2/3;
   justify-self: start;
@@ -839,6 +843,7 @@ body {
     width: 100%;
     background-color: #616BE8;
     border-radius: 10px;
+    transition: all 0.5s;
   }
   .header__btn-burger-line::after, .header__btn-burger-line::before {
     content: "";
@@ -848,6 +853,7 @@ body {
     background-color: #616BE8;
     border-radius: 10px;
     left: 0;
+    transition: all 0.5s;
   }
   .header__btn-burger-line::before {
     content: "";
@@ -856,6 +862,19 @@ body {
   .header__btn-burger-line::after {
     content: "";
     bottom: 0;
+  }
+  .header__btn-burger-exit .header__btn-burger-line {
+    background-color: transparent;
+  }
+  .header__btn-burger-exit .header__btn-burger-line::before {
+    content: "";
+    rotate: 45deg;
+    top: 45%;
+  }
+  .header__btn-burger-exit .header__btn-burger-line::after {
+    content: "";
+    rotate: -45deg;
+    top: 45%;
   }
   .first-screen__cont {
     padding: 82px 0 43vw;
@@ -1037,7 +1056,7 @@ body {
     line-height: 46px;
   }
   .first-screen__btn {
-    padding: 17px 66px;
+    padding: 15px 64px;
   }
   .we-offer {
     padding: 72px 0;
@@ -1121,7 +1140,7 @@ body {
     margin-bottom: 24px;
   }
   .calculator__btn {
-    padding: 14px 28px;
+    padding: 12px 26px;
   }
   .partners__logo {
     max-width: 196px;
@@ -1142,7 +1161,7 @@ body {
   }
   .advantages__btn {
     display: block;
-    padding: 13px 66px;
+    padding: 11px 64px;
     margin: 32px auto 52px;
   }
   .contacts {
