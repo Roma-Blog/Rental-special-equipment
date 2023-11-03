@@ -50,54 +50,56 @@ document.querySelector('.pop-up__exit').addEventListener('click', function () {
 })
 
 //calculator________________________________
-const priceDay = $('.calculator__total-subscription-price-day span:first-child')
-const priceMonthly = $('.calculator__total-subscription-price-monthly span:first-child')
+const priceDay = document.querySelector('.calculator__total-subscription-price-day span:first-child')
+const priceMonthly = document.querySelector('.calculator__total-subscription-price-monthly span:first-child')
 
-$('.calculator__item-parameters').each(function () {
-  let inputNum = $(this).find('.calculator__item-number')
-  let checkbox = $(this).find('.calculator__item-checkbox')
-  let finishPrice = $(this).find('.calculator__final-price .calculator__final-price-number')
+document.querySelectorAll('.calculator__item-parameters').forEach((elem) => {
+  let inputNum = elem.querySelector('.calculator__item-number')
+  let checkbox = elem.querySelector('.calculator__item-checkbox')
+  let finishPrice = elem.querySelector('.calculator__final-price .calculator__final-price-number')
 
-  Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+  Calculate(inputNum.value, checkbox.checked, finishPrice)
   FinishCalculate()
-  inputNum.on('focusout', function () {
-    if (inputNum.val() == '') {
-      inputNum.val('1')
+  inputNum.addEventListener('focusout', function () {
+    if (inputNum.value == '') {
+      inputNum.value = 1
     }
   })
-  inputNum.on('change', function () {
-    if (inputNum.val() > 99) {
-      inputNum.val('99')
+  inputNum.addEventListener('change', function () {
+    if (this.value > 99) {
+      this.value = 99
     }
-    else if ($(this).val() < 1) {
-      inputNum.val('1')
+    else if (this.value < 1) {
+      this.value = 1
     }
-    Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+    Calculate(this.value, checkbox.checked, finishPrice)
     FinishCalculate()
   })
-  checkbox.on('change', function () {
-    Calculate(inputNum.val(), checkbox.prop('checked'), finishPrice)
+  checkbox.addEventListener('change', function () {
+    Calculate(inputNum.value, checkbox.checked, finishPrice)
     FinishCalculate()
   })
 })
 
 function Calculate(num, checked, el) {
   if (checked) {
-    el.html(el.data('price') * num).data('finishprice', el.data('price') * num)
+    el.textContent = el.dataset.price * num
+    el.dataset.finishprice = el.dataset.price * num
   }
   else {
-    el.html(0).data('finishprice', 0)
+    el.textContent = 0
+    el.dataset.finishprice = 0
   }
 }
 
 function FinishCalculate() {
   let priceDaySum = 0
-  $('.calculator__final-price-number').each(function () {
-    priceDaySum += $(this).data('finishprice')
+  document.querySelectorAll('.calculator__final-price-number').forEach((elem) => {
+    priceDaySum += elem.dataset.finishprice * 1
   })
 
-  priceDay.html(priceDaySum + ' ₽')
-  priceMonthly.html((priceDaySum * 30) + ' ₽')
+  priceDay.textContent = priceDaySum + ' ₽'
+  priceMonthly.textContent = (priceDaySum * 30) + ' ₽'
 }
 
 //mob_menu________________________
@@ -118,6 +120,145 @@ itemMobMenu.forEach((elem) => {
   })
 })
 
+//mask-phone_______________________________
+let phoneInputs = document.querySelectorAll('input[data-tel-input]')
+let telValidate = false
+
+function getInputNumbersValue (input) {
+    return input.value.replace(/\D/g, '')
+}
+
+function onPhonePaste (e) {
+    let input = e.target,
+        inputNumbersValue = getInputNumbersValue(input)
+    let pasted = e.clipboardData || window.clipboardData
+    if (pasted) {
+        let pastedText = pasted.getData('Text')
+        if (/\D/g.test(pastedText)) {
+            input.value = inputNumbersValue
+            return
+        }
+    }
+}
+
+function onPhoneInput (e) {
+    let input = e.target,
+        inputNumbersValue = getInputNumbersValue(input),
+        selectionStart = input.selectionStart,
+        formattedInputValue = ""
+
+    if (!inputNumbersValue) {
+        return input.value = ""
+    }
+
+    if (input.value.length != selectionStart) {
+        if (e.data && /\D/g.test(e.data)) {
+            input.value = inputNumbersValue
+        }
+        return
+    }
+    if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+        if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue
+        let firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7"
+        formattedInputValue = input.value = firstSymbols + " "
+        if (inputNumbersValue.length > 1) {
+            formattedInputValue += '(' + inputNumbersValue.substring(1, 4)
+        }
+        if (inputNumbersValue.length >= 5) {
+            formattedInputValue += ') ' + inputNumbersValue.substring(4, 7)
+        }
+        if (inputNumbersValue.length >= 8) {
+            formattedInputValue += '-' + inputNumbersValue.substring(7, 9)
+        }
+        if (inputNumbersValue.length >= 10) {
+            formattedInputValue += '-' + inputNumbersValue.substring(9, 11)
+        }
+    } else {
+        formattedInputValue = '+7(' + inputNumbersValue.substring(0, 16)
+    }
+    input.value = formattedInputValue
+}
+function onPhoneKeyDown (e) {
+    let inputValue = e.target.value.replace(/\D/g, '')
+    if (e.keyCode == 8 && inputValue.length == 1) {
+        e.target.value = ""
+    }
+}
+
+for (let phoneInput of phoneInputs) {
+    phoneInput.addEventListener('keydown', onPhoneKeyDown)
+    phoneInput.addEventListener('input', onPhoneInput, false)
+    phoneInput.addEventListener('paste', onPhonePaste, false)
+    phoneInput.addEventListener('blur', InputValidateTel)
+}
+
+//Validate____________________________________________________________
+let forms = document.querySelectorAll('form')
+
+for (let form of forms) {
+    form.addEventListener('submit', CheckFormValidate)
+
+}
+
+function CheckFormValidate(e){
+    if (!InputValidateTel(e.target.querySelector('input[data-tel-input]'))){
+        e.preventDefault()
+    }
+}
+
+function InputValidateTel(e){
+    if (e.target) e = e.target
+
+    let str = e.value
+    let textError = e.nextElementSibling
+    
+    if(str.length == 0){
+        e.classList.add('invalid-input')
+        e.addEventListener('input', InputValidateTel)
+        textError.classList.add('order__text-error-block')
+        ErrorMessage(textError, 'Введите ваш номер телефона')
+        return false 
+    }
+    else if (str.length == CheckingFirstNum(str[0])){
+        e.classList.remove('invalid-input')
+        textError.classList.remove('order__text-error-block')
+        return true
+    }
+    else {
+        e.classList.add('invalid-input')
+        e.addEventListener('input', InputValidateTel)
+        ErrorMessage(textError, 'Номер телефона введен не полностью')
+        return false
+    }
+}
+
+function CheckingFirstNum(num) {
+    if (num == '+') return 18
+    else if (num == '8') return 17
+}
+
+function ErrorMessage(el, text){
+    el.classList.add('order__text-error-block')
+    el.innerHTML = text
+}
+
+function onInput(e) {
+    if (e.target) e = e.target
+
+    let textError = e.nextElementSibling
+
+	if (isEmailValid(e.value)) {
+		e.classList.remove('invalid-input')
+        textError.classList.remove('order__text-error-block')
+        return true
+	} else {
+		e.classList.add('invalid-input')
+        if (e.value == '') ErrorMessage(textError, 'Введите ваш e-mail')
+        else ErrorMessage(textError, 'E-mail введен не корректно')
+        e.addEventListener('input', onInput)
+        return false
+	}
+}
 
 //Jquery____________________________________________
 //Slider
