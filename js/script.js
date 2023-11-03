@@ -1,73 +1,55 @@
+const mobMenu = document.querySelector('.header__mob-nav')
+const btnBurger = document.querySelector('.header__btn-burger')
+let menuOpen = false
+
+const popUp = document.querySelector('.pop-up')
+const body = document.querySelector('body')
+const titlePopUp = document.querySelector('.pop-up__title')
+
+
 //mask-phone________________________________
 $('.art-stranger').mask('+7(999)999-99-99',{autoclear: false})
 
 //FAQ________________________________
-$('.faq__item').each(function(){
-    let heightEl = $(this).find('.faq__question-btn + .faq__answer-box .faq__answer').css('height')
-    const answerBox = $(this).find('.faq__question-btn + .faq__answer-box')
-    const iconArrow = $(this).find('.faq__question-btn .faq__question-icon')
-    const faqBtn = $(this).find('.faq__question-btn')
-    faqBtn.on('click', function(){
-        if ($(this).hasClass('faq-open')){
-            answerBox.css('height', '0px')
-            iconArrow.css('rotate', '0deg')
-            $(this).removeClass('faq-open')
+
+document.querySelectorAll('.faq__item').forEach((elem) => {
+    let heightEl = elem.querySelector('.faq__question-btn + .faq__answer-box .faq__answer').offsetHeight
+    const answerBox = elem.querySelector('.faq__question-btn + .faq__answer-box')
+    const iconArrow = elem.querySelector('.faq__question-btn .faq__question-icon')
+    const faqBtn = elem.querySelector('.faq__question-btn')
+    
+    faqBtn.addEventListener('click', function(){
+        if (this.classList.contains('faq-open')){
+            answerBox.style.height = 0 + 'px'
+            iconArrow.style.rotate = 0 + 'deg'
+            this.classList.remove('faq-open')
         }
         else{
-            answerBox.css('height', heightEl)
-            iconArrow.css('rotate', '90deg')
-            $(this).addClass('faq-open')
+            answerBox.style.height = heightEl + 'px'
+            iconArrow.style.rotate = 90 + 'deg'
+            this.classList.add('faq-open')
         }
     })
 })
 
-//Slider________________________________
-$('.partners__list').slick({
-    infinite: true,
-    slidesToShow: 3,
-    arrows: false,
-    responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 680,
-          settings: {
-            slidesToShow: 1,
-          }
-        }
-      ]
-  })
-
-$('.partners__btn--next').on('click', function(){
-    $('.partners__list').slick('slickNext')
-})
-$('.partners__btn--previous').on('click', function(){
-    $('.partners__list').slick('slickPrev')
-})
-
 //Pop-up________________________________
-const popUp = $('.pop-up')
-const body = $('body')
-
-$('.btn-open-pop-up').each(function(){
-  $(this).on('click', function(){
-    popUp.addClass('pop-up__open')
-    body.addClass('scroll-none')
-    if ($(this).data('title')){
-      $('.pop-up__title').html($(this).data('title'))
+document.querySelectorAll('.btn-open-pop-up').forEach((elem) =>{
+  elem.addEventListener('click', function(){
+    if (!menuOpen){
+      popUp.classList.add('pop-up__open')
+      body.classList.add('scroll-none')
+    }
+    if (elem.dataset.title){
+      titlePopUp.textContent = this.dataset.title
     }
     else {
-      $('.pop-up__title').html($('.pop-up__title').data('title'))
+      titlePopUp.textContent = titlePopUp.dataset.title
     }
   })
 })
-$('.pop-up__exit').on('click', function(){
-  popUp.removeClass('pop-up__open')
-  body.removeClass('scroll-none')
+document.querySelector('.pop-up__exit').addEventListener('click', function(){
+  popUp.classList.remove('pop-up__open')
+  body.classList.remove('scroll-none')
 })
 
 //calculator________________________________
@@ -122,16 +104,40 @@ function FinishCalculate(){
 }
 
 //mob_menu________________________
-const mobMenu = $('.header__mob-nav')
-const btnBurger = $('.header__btn-burger')
 
-btnBurger.on('click', function(){
-  if (mobMenu.hasClass('header__mob-nav-open')){
-    mobMenu.removeClass('header__mob-nav-open')
-    btnBurger.removeClass('header__btn-burger-exit')
-  }
-  else{
-    mobMenu.addClass('header__mob-nav-open')
-    btnBurger.addClass('header__btn-burger-exit')
-  }
+btnBurger.addEventListener('click', function(){
+  mobMenu.classList.toggle('header__mob-nav-open')
+  btnBurger.classList.toggle('header__btn-burger-exit')
+  body.classList.toggle('scroll-none')
+  menuOpen = !menuOpen
+})
+
+
+//Jquery____________________________________________
+//Slider
+$('.partners__list').slick({
+  infinite: true,
+  slidesToShow: 3,
+  arrows: false,
+  responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+})
+
+$('.partners__btn--next').on('click', function(){
+  $('.partners__list').slick('slickNext')
+})
+$('.partners__btn--previous').on('click', function(){
+  $('.partners__list').slick('slickPrev')
 })
