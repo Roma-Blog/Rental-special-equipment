@@ -351,8 +351,10 @@ body {
 .order-form__input {
   font-size: 16px;
   font-weight: 400;
-  padding: 13px 16px;
+  padding: 12px 15px;
   border-radius: 12px;
+  align-self: self-start;
+  border: 1px solid transparent;
 }
 .order-form__input::-moz-placeholder {
   color: #8B8FBB;
@@ -364,13 +366,17 @@ body {
   grid-column: 1/2;
 }
 .order-form__input--tel {
-  grid-column: 2/3;
+  width: 100%;
 }
 .order-form__input--submit {
   grid-column: 3/4;
 }
 .order-form__input--submit:hover {
   cursor: pointer;
+}
+.order-form__text-error {
+  color: #ffffff;
+  display: none;
 }
 
 .calculator {
@@ -819,10 +825,15 @@ body {
 .pop-up__text-error {
   font-size: 14px;
   color: red;
+  display: none;
 }
 
 .invalid-input {
   border-color: red;
+}
+
+.text-error-block {
+  display: block;
 }
 
 @media (max-width: 1440px) {

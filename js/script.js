@@ -215,13 +215,13 @@ function InputValidateTel(e){
     if(str.length == 0){
         e.classList.add('invalid-input')
         e.addEventListener('input', InputValidateTel)
-        textError.classList.add('order__text-error-block')
+        textError.classList.add('text-error-block')
         ErrorMessage(textError, 'Введите ваш номер телефона')
         return false 
     }
     else if (str.length == CheckingFirstNum(str[0])){
         e.classList.remove('invalid-input')
-        textError.classList.remove('order__text-error-block')
+        textError.classList.remove('text-error-block')
         return true
     }
     else {
